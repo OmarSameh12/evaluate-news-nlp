@@ -3,8 +3,12 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 dotenv.config();
+var textapi = new aylien({
+    application_id: process.env.API_ID,
+    application_key: process.env.API_KEY
+ });
 
-const app = express();
+app.use(express.static('dist'))
 
 const cors = require('cors');
 
@@ -17,8 +21,8 @@ console.log(__dirname);
 
 
 app.get('/', function (req, res) {
-    res.send("This is the server API page, you may access its services via the client app.");
-});
+    res.sendFile('dist/index.html')
+    })
 
 
 // POST Route
