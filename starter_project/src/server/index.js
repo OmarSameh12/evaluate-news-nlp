@@ -26,7 +26,9 @@ app.get('/', function (req, res) {
 
 
 // POST Route
-
+app.post('send',function(req,res){
+    
+})
 
 
 // Designates what port the app will listen to for incoming requests

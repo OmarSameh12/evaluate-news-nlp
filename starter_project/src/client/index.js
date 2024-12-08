@@ -12,7 +12,6 @@ test('invalidates an incorrect URL', () => {
 });
 
 alert("I EXIST")
-// sass files
 
 import './styles/resets.scss'
 import './styles/base.scss'
