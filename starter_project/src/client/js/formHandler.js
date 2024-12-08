@@ -14,8 +14,8 @@ function handleSubmit(event) {
 
     // This is an example code that checks the submitted name. You may remove it from your code
     Client.checkForName(formText);
-    fetch('https://localhost:8000/send',formText);
-    // Check if the URL is valid
+    var res = fetch('https://localhost:8000/send',{text:formText});
+    res.then(res=>{console.log("request sent successfully")})
  
       
 }

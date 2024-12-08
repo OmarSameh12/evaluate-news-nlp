@@ -25,9 +25,27 @@ app.get('/', function (req, res) {
     })
 
 
+
 // POST Route
 app.post('send',function(req,res){
-    
+    const formdata = new FormData();
+    formdata.append("userInput",req.text)
+formdata.append("txt",formdata);
+formdata.append("lang", 'en');  
+
+const requestOptions = {
+  method: 'POST',
+  body: formdata,
+  redirect: 'follow'
+};
+
+const response = fetch("https://api.meaningcloud.com/sentiment-2.1", requestOptions)
+  .then(response => ({
+    status: response.status, 
+    body: response.json()
+  }))
+  .then(({ status, body }) => console.log(status, body))
+  .catch(error => console.log('error', error));
 })
 
 
