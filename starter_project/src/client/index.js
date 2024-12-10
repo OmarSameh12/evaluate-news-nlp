@@ -1,7 +1,7 @@
 // js files
 import { handleSubmit } from './js/formHandler'
 import {checkForName} from './js/nameChecker'
-const isValidUrl = require('./urlValidator');
+const isValidUrl = require('./js/isValidUrl');
 
 test('validates a correct URL', () => {
     expect(isValidUrl('https://www.example.com')).toBe(true);
